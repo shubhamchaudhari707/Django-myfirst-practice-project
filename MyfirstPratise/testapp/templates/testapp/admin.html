@@ -1,0 +1,33 @@
+{% extends 'testapp/base.html' %}
+{% block content %}
+    <div class="containers">
+        <h1>Student Information</h1>
+        {% if us %}
+
+        <table border="3">
+            <tr>
+                <th>Id </th>
+                <th>First Name </th>
+                <th>Last Name </th>
+                <th>Email </th>
+                <th>Username</th>
+            </tr>
+
+            {% for user in us %}
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.username}}</td>
+            </tr>
+            {% endfor %}
+
+            {%else%}
+            <p>NO record found !!!</p>
+        </table>
+
+        {%endif%}
+
+    </div>
+{% endblock content %}

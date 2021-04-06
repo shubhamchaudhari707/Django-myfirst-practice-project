@@ -1,0 +1,41 @@
+{% extends 'testapp/base.html' %}
+
+{% block content %}
+
+<!-- <h1 style="text-align: center;">Login Page</h1> -->
+
+<div class="container">
+
+    <div class="row">
+        <div class="column col-md-7">
+            <h1>facebook</h1>
+        </div>
+        <div class="column col-md-5 pt-5 mt-5 ">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+
+                    <input type="text" class="form-control" id="" name="username" required placeholder="Username">
+
+                </div>
+
+                <div class="form-group">
+
+                    <input type="password" class="form-control" id="" required name="password" placeholder="password">
+                </div>
+
+                <button type="submit" class="btn btn-primary ">Submit</button>
+                <a class="btn btn-primary" href="{% url 'signup' %}" role="button">Create New Account</a>
+                <div>
+                    {% for message in messages %}
+                    <h3>{{message}}</h3>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock content %}

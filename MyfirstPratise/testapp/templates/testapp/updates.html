@@ -1,0 +1,40 @@
+{% extends 'testapp/base.html' %}
+
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="text-center alert alert-danger">
+        Fuction Based View Modelform CRUD Project
+    </h2>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 offset-2">
+            <h4 class="alert alert-info">Update Student Information Name : {{data.name}}</h4>
+            <form action="" method="post">
+                {% csrf_token %}
+
+
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" value="{{data.name}}" aria-describedby="emailHelp" required name="name">
+                </div>
+                <div class="form-group">
+                    <label for="">Subject</label>
+                    <input type="text" class="form-control" value="{{data.subject}}" aria-describedby="emailHelp" required name="subject">
+                </div>
+                <div class="form-group">
+                    <label for="">Marks</label>
+                    <input type="number" class="form-control" value="{{data.marks}}" aria-describedby="emailHelp" required name="marks">
+                </div>
+                <button type="submit" class="btn btn-success">Update</button>
+                <a href="{% url 'crud' %}" class="btn btn-info">Back To Home</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

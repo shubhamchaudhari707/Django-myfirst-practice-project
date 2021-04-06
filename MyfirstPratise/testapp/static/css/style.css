@@ -1,0 +1,21 @@
+.col-md-5{
+    height: 400px;
+    /* width: 400px; */
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+.col-md-7 h1{
+    display: flex;
+    align-items: center;
+    margin-top: 200px;
+    justify-content: center;
+    color: blue;
+}
+.containers{
+    text-align: center;
+}
+.containers table{
+    text-align: center;
+    margin: auto;
+
+}
+
